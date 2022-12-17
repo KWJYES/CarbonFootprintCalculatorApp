@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="click"
+            type="com.example.carbonfootprintcalculator.adapter.MainRVItemAdapter.Click" />
+        <variable
+            name="item"
+            type="com.example.carbonfootprintcalculator.entity.MainRVItem" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_marginBottom="5dp"
+        android:layout_height="50dp">
+
+        <TextView
+            android:textColor="@color/black"
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="15dp"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:text="@{item.name.split(`-`)[1]}"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <LinearLayout
+            android:layout_marginEnd="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent">
+        <Button
+            android:onClick="@{click::sub}"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:text="-"
+            android:gravity="center"
+            android:textSize="20sp"/>
+            <EditText
+                android:inputType="number"
+                android:id="@+id/et_num"
+                android:layout_width="70dp"
+                android:layout_height="50dp"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:text="@{``+item.num}"
+                android:gravity="center"/>
+            <Button
+                android:onClick="@{click::add}"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="+"
+                android:gravity="center"
+                android:textSize="20sp"/>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
