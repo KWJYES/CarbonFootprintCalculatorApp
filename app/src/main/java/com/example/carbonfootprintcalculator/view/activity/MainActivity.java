@@ -1,9 +1,11 @@
 package com.example.carbonfootprintcalculator.view.activity;
 
 import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.PopupMenu;
 import android.widget.Toast;
@@ -14,6 +16,7 @@ import com.example.carbonfootprintcalculator.base.BaseActivity;
 import com.example.carbonfootprintcalculator.callback.MainRVItemNumChangeListener;
 import com.example.carbonfootprintcalculator.databinding.ActivityMainBinding;
 import com.example.carbonfootprintcalculator.entity.MainRVItem;
+import com.example.carbonfootprintcalculator.utils.ActivityCollector;
 import com.example.carbonfootprintcalculator.viewmodel.MainViewModel;
 
 import java.util.ArrayList;
@@ -37,6 +40,7 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void observerDataStateUpdateAction() {
         vm.selectPos.observe(this, this::updateRecyclerView);
+        vm.requestSate.observe(this, s -> Toast.makeText(MainActivity.this, s, Toast.LENGTH_SHORT).show());
     }
 
     private void updateRecyclerView(Integer integer) {
@@ -116,7 +120,15 @@ public class MainActivity extends BaseActivity {
         PopupMenu popupMenu = new PopupMenu(this, view);
         popupMenu.getMenuInflater().inflate(R.menu.menu, popupMenu.getMenu());
         popupMenu.setOnMenuItemClickListener(item -> {
-            Toast.makeText(MainActivity.this, item.getTitle(), Toast.LENGTH_SHORT).show();
+            switch (item.getItemId()){
+                case R.id.history:
+                    startActivity(new Intent(MainActivity.this,HistoryRecordActivity.class));
+                    break;
+                case R.id.login_out:
+                    startActivity(new Intent(MainActivity.this,LoginActivity.class));
+                    ActivityCollector.loginOutFinish();
+                    break;
+            }
             return false;
         });
         popupMenu.show();

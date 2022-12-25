@@ -4,13 +4,17 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/AndroidStudioProgects/CarbonFootprintCalculator/app/src/main/res/drawable/et_cursor.xml" value="0.2490740740740741" />
+        <entry key="..\:/AndroidStudioProgects/CarbonFootprintCalculator/app/src/main/res/drawable/et_login.xml" value="0.2388888888888889" />
         <entry key="..\:/AndroidStudioProgects/CarbonFootprintCalculator/app/src/main/res/drawable/ic_email_fill.xml" value="0.2490740740740741" />
         <entry key="..\:/AndroidStudioProgects/CarbonFootprintCalculator/app/src/main/res/drawable/ic_password.xml" value="0.2490740740740741" />
+        <entry key="..\:/AndroidStudioProgects/CarbonFootprintCalculator/app/src/main/res/drawable/login_btn.xml" value="0.2388888888888889" />
         <entry key="..\:/AndroidStudioProgects/CarbonFootprintCalculator/app/src/main/res/drawable/login_register_et.xml" value="0.209375" />
         <entry key="..\:/AndroidStudioProgects/CarbonFootprintCalculator/app/src/main/res/drawable/unselect.xml" value="0.2692307692307692" />
+        <entry key="..\:/AndroidStudioProgects/CarbonFootprintCalculator/app/src/main/res/layout/activity_history_record.xml" value="0.18478260869565216" />
         <entry key="..\:/AndroidStudioProgects/CarbonFootprintCalculator/app/src/main/res/layout/activity_login.xml" value="0.26621847886098404" />
         <entry key="..\:/AndroidStudioProgects/CarbonFootprintCalculator/app/src/main/res/layout/activity_main.xml" value="0.23233695652173914" />
         <entry key="..\:/AndroidStudioProgects/CarbonFootprintCalculator/app/src/main/res/layout/activity_register.xml" value="0.23233695652173914" />
+        <entry key="..\:/AndroidStudioProgects/CarbonFootprintCalculator/app/src/main/res/layout/item_history_recover_rv.xml" value="0.16941175927517163" />
         <entry key="..\:/AndroidStudioProgects/CarbonFootprintCalculator/app/src/main/res/layout/item_main_rv.xml" value="0.21510416666666668" />
         <entry key="..\:/AndroidStudioProgects/CarbonFootprintCalculator/app/src/main/res/menu/menu.xml" value="0.21510416666666668" />
       </map>

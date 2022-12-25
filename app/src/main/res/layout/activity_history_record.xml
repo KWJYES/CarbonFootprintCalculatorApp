@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="event"
+            type="com.example.carbonfootprintcalculator.view.activity.HistoryRecordActivity.Event" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.activity.HistoryRecordActivity">
+
+        <com.example.carbonfootprintcalculator.ui.StatusBarHeightView
+            android:id="@+id/statusBarHeightView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/toolbar_color"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/toolbar_color"
+            app:layout_constraintTop_toBottomOf="@+id/statusBarHeightView">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="历史记录"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="10dp"
+                android:gravity="center"
+                android:onClick="@{event::back}"
+                android:text="&lt;"
+                android:textColor="@color/black"
+                android:textSize="28sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.scwang.smart.refresh.layout.SmartRefreshLayout
+            android:id="@+id/smartRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
+
+            <com.scwang.smart.refresh.header.MaterialHeader
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_history_item"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_empty_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/smartRefreshLayout"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ic_empty_box" />
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="暂无数据\n刷新试试"
+                android:textColor="@color/black"
+                android:textSize="15sp"/>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -16,6 +16,10 @@ public class CalculatorUtil {
         numMap.put(itemName,num);
     }
 
+    /**
+     * 计算问题等价为多少颗树
+     * @return 多少颗树
+     */
     public double calculator(){
         for (Map.Entry<String, Double> entry : numMap.entrySet()) {
             String name = entry.getKey();
@@ -107,5 +111,13 @@ public class CalculatorUtil {
                 result.add(new MainRVItem(key,numMap.get(key)));
         }
         return result;
+    }
+
+    public int toTree(double n)
+    {
+        if (carbonNum%111 ==0)
+            return  (int) (n/111);
+        else
+            return  (int) (n/111)+1;
     }
 }

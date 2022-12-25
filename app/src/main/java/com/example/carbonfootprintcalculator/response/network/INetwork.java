@@ -5,10 +5,12 @@ import androidx.lifecycle.MutableLiveData;
 import com.example.carbonfootprintcalculator.entity.body.Item;
 import com.example.carbonfootprintcalculator.entity.body.User;
 
+import java.util.List;
+
 public interface INetwork {
     void register(User user, MutableLiveData<String> state);
     void login(User user, MutableLiveData<String> state);
     void insert(Item item, MutableLiveData<String> state);
     void delete(Item item, MutableLiveData<String> state);
-    void find(User user, MutableLiveData<String> state);
+    void find(User user, MutableLiveData<List<Item>> itemList, MutableLiveData<String> state);
 }

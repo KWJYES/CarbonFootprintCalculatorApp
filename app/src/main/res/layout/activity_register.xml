@@ -40,7 +40,7 @@
 
         <LinearLayout
             android:padding="5dp"
-            android:background="@color/bg_null"
+            android:background="@drawable/et_login"
             android:layout_marginTop="200dp"
             android:id="@+id/linearLayout"
             android:layout_width="250dp"
@@ -70,7 +70,7 @@
 
         </LinearLayout>
         <LinearLayout
-            android:background="@color/bg_null"
+            android:background="@drawable/et_login"
             android:padding="5dp"
             android:layout_marginTop="10dp"
             android:id="@+id/linearLayout2"

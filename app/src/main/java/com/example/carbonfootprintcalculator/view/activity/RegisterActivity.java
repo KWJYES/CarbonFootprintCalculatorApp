@@ -21,6 +21,7 @@ public class RegisterActivity extends BaseActivity {
 
     @Override
     protected void initActivity() {
+        setTransparentStatusBar(true);
         vm = new ViewModelProvider(this, new ViewModelProvider.NewInstanceFactory()).get(RegisterViewModel.class);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_register);
         binding.setEvent(new Event());

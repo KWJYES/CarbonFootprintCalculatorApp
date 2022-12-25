@@ -4,6 +4,11 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
+import com.example.carbonfootprintcalculator.entity.body.Item;
+import com.google.gson.Gson;
+
+import java.util.Calendar;
+
 /**
  * Example local unit test, which will execute on the development machine (host).
  *
@@ -12,6 +17,8 @@ import static org.junit.Assert.*;
 public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() {
-        assertEquals(4, 2 + 2);
+        System.out.println("-------------");
+
+        System.out.println("-------------");
     }
 }

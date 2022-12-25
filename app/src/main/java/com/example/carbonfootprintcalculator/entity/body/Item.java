@@ -5,8 +5,17 @@ import java.util.Date;
 
 public class Item {
     private double carbonNum;
-    private Date date;
+    private String date;
     private String uname;
+    private int treeNum;
+
+    public int getTreeNum() {
+        return treeNum;
+    }
+
+    public void setTreeNum(int treeNum) {
+        this.treeNum = treeNum;
+    }
 
     public String getUname() {
         return uname;
@@ -16,11 +25,11 @@ public class Item {
         this.uname = uname;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
@@ -30,5 +39,14 @@ public class Item {
 
     public void setCarbonNum(double carbonNum) {
         this.carbonNum = carbonNum;
+    }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "carbonNum=" + carbonNum +
+                ", date=" + date +
+                ", uname='" + uname + '\'' +
+                '}';
     }
 }
