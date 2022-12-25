@@ -7,6 +7,7 @@ import androidx.lifecycle.MutableLiveData;
 import com.example.carbonfootprintcalculator.entity.body.Item;
 import com.example.carbonfootprintcalculator.entity.body.Response;
 import com.example.carbonfootprintcalculator.entity.body.User;
+import com.example.carbonfootprintcalculator.response.local.SharedPreferencesManager;
 import com.example.carbonfootprintcalculator.response.network.retrofit_api.IService;
 import com.example.carbonfootprintcalculator.utils.MyApplication;
 
@@ -55,7 +56,6 @@ public class HttpRequestManager implements INetwork {
                 } else {
                     state.setValue("注册失败！");
                 }
-
             }
 
             @Override
@@ -72,8 +72,9 @@ public class HttpRequestManager implements INetwork {
             public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
                 if (response.code() == 200) {
                     Response r = response.body();
-                    if (r.getCode() == 200)
+                    if (r.getCode() == 200){
                         state.setValue("登陆成功!");
+                    }
                     else {
                         state.setValue(r.getMsg());
                     }
@@ -86,6 +87,7 @@ public class HttpRequestManager implements INetwork {
             public void onFailure(Call<Response> call, Throwable t) {
                 state.setValue("网络请求失败！");
                 Log.d("login",user.toString());
+                Log.d("login",t.getMessage());
             }
         });
     }
@@ -119,10 +121,10 @@ public class HttpRequestManager implements INetwork {
                 if (response.code() == 200) {
                     Response r = response.body();
                     if (r.getCode() == 200)
-                        state.setValue("成功成功！");
-                    else  state.setValue("成功失败！");
+                        state.setValue("删除成功！");
+                    else  state.setValue("删除失败！");
                 } else {
-                    state.setValue("成功失败！");
+                    state.setValue("删除失败！");
                 }
             }
 

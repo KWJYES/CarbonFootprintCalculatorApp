@@ -6,6 +6,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.carbonfootprintcalculator.R;
@@ -13,6 +14,7 @@ import com.example.carbonfootprintcalculator.adapter.HistoryRecordRVItemAdapter;
 import com.example.carbonfootprintcalculator.base.BaseActivity;
 import com.example.carbonfootprintcalculator.databinding.ActivityHistoryRecordBinding;
 import com.example.carbonfootprintcalculator.entity.body.Item;
+import com.example.carbonfootprintcalculator.utils.ItemTouchCallBack;
 import com.example.carbonfootprintcalculator.utils.MyApplication;
 import com.example.carbonfootprintcalculator.viewmodel.HistoryRecordViewModel;
 import com.scwang.smart.refresh.layout.api.RefreshLayout;
@@ -45,6 +47,7 @@ public class HistoryRecordActivity extends BaseActivity {
                 binding.llEmptyData.setVisibility(View.VISIBLE);
                 Toast.makeText(HistoryRecordActivity.this, s, Toast.LENGTH_SHORT).show();
             }
+            binding.smartRefreshLayout.finishRefresh();
         });
         vm.itemList.observe(this, this::updateRv);
     }
@@ -58,10 +61,14 @@ public class HistoryRecordActivity extends BaseActivity {
     }
 
     private void updateRv(List<Item> itemList) {
+        ItemTouchCallBack touchCallBack = new ItemTouchCallBack();
         binding.rvHistoryItem.setLayoutManager(new LinearLayoutManager(this));
         HistoryRecordRVItemAdapter adapter = new HistoryRecordRVItemAdapter(itemList);
         adapter.setItemCallback(item -> vm.deleteRecord(item));
+        touchCallBack.setOnItemTouchListener(adapter);
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(touchCallBack);
         binding.rvHistoryItem.setAdapter(adapter);
+        itemTouchHelper.attachToRecyclerView(binding.rvHistoryItem);
     }
 
     public class Event {

@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MyApplication extends Application {
-    private Context context;
+    private static Application context;
 
     public static final String SUSSED ="request_sussed" ;
 
@@ -20,11 +20,11 @@ public class MyApplication extends Application {
     }
 
 
-    public Context getContext() {
+    public static Context getContext() {
         return context;
     }
 
-    public static final String baseUrl="http://192.168.1.77:8080/";
+    public static final String baseUrl="http://47.113.205.12:8080/";
     public static final String userName="";
 
 

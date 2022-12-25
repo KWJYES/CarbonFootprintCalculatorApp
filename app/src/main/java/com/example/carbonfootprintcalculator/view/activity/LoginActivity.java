@@ -29,10 +29,18 @@ public class LoginActivity extends BaseActivity {
     }
 
     @Override
+    protected void initView() {
+        vm.uname.setValue("");
+        vm.pwd.setValue("");
+        vm.getAccount();
+    }
+
+    @Override
     protected void observerDataStateUpdateAction() {
         vm.loginSate.observe(this, s -> {
             Toast.makeText(LoginActivity.this, s, Toast.LENGTH_SHORT).show();
             if(s.equals("登陆成功!")){
+                vm.loginSucceed();
                 startActivity(new Intent(LoginActivity.this,MainActivity.class));
                 finish();
             }

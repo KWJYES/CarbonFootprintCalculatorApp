@@ -43,10 +43,20 @@ public class MainViewModel extends ViewModel {
         Calendar calendar = Calendar.getInstance();
         int year = calendar.get(Calendar.YEAR);
         int month = calendar.get(Calendar.MONTH)+1;
+        String str_month =""+ month;
+        if(month<10) str_month="0"+month;
         int day = calendar.get(Calendar.DAY_OF_MONTH);
+        String str_day =""+ day;
+        if(day<10) str_day="0"+day;
         int hour = calendar.get(Calendar.HOUR_OF_DAY);
+        String str_hour =""+ hour;
+        if(hour<10) str_hour="0"+hour;
         int minute = calendar.get(Calendar.MINUTE);
+        String str_minute =""+ minute;
+        if(minute<10) str_minute="0"+minute;
         int second = calendar.get(Calendar.SECOND);
-        return year+"-"+month+"-"+day+"T"+hour+":"+minute+":"+second;
+        String str_second =""+ second;
+        if(second<10) str_second="0"+second;
+        return year+"-"+str_month+"-"+str_day+"T"+str_hour+":"+str_minute+":"+str_second;
     }
 }

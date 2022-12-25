@@ -30,6 +30,12 @@ public class RegisterActivity extends BaseActivity {
     }
 
     @Override
+    protected void initView() {
+        vm.uname.setValue("");
+        vm.pwd.setValue("");
+    }
+
+    @Override
     protected void observerDataStateUpdateAction() {
         vm.requestState.observe(this, s -> {
             Toast.makeText(RegisterActivity.this, s, Toast.LENGTH_SHORT).show();
