@@ -73,6 +73,7 @@ public class HttpRequestManager implements INetwork {
                 if (response.code() == 200) {
                     Response r = response.body();
                     if (r.getCode() == 200){
+                        MyApplication.userName= user.getUname();
                         state.setValue("登陆成功!");
                     }
                     else {

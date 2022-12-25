@@ -25,7 +25,7 @@ public class MyApplication extends Application {
     }
 
     public static final String baseUrl="http://47.113.205.12:8080/";
-    public static final String userName="";
+    public static String userName="";
 
 
 
