@@ -26,7 +26,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout3"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="40dp"
             android:background="@color/toolbar_color"
             app:layout_constraintTop_toBottomOf="@+id/statusBarHeightView">
 
@@ -34,7 +34,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="历史记录"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -48,7 +48,7 @@
                 android:gravity="center"
                 android:onClick="@{event::back}"
                 android:text="&lt;"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="28sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

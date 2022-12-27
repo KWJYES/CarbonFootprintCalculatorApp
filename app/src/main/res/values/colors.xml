@@ -10,7 +10,7 @@
     <color name="bg_null">#CBF6F6F6</color>
     <color name="btn_ripple">#65000000</color>
 
-    <color name="selected">#FFFFFF</color>
+    <color name="selected">#FAF7F2</color>
     <color name="unselected">#A5A5A5</color>
     <color name="toolbar_color">#7CB342</color>
 </resources>

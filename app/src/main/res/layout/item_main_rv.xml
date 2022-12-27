@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+
         <variable
             name="click"
             type="com.example.carbonfootprintcalculator.adapter.MainRVItemAdapter.Click" />
+
         <variable
             name="item"
             type="com.example.carbonfootprintcalculator.entity.MainRVItem" />
@@ -14,51 +16,83 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_marginBottom="5dp"
-        android:layout_height="50dp">
+        android:layout_height="52dp"
+        android:layout_marginBottom="5dp">
 
         <TextView
-            android:textColor="@color/black"
+            android:layout_marginBottom="2dp"
             android:id="@+id/textView"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginStart="15dp"
+            android:layout_marginHorizontal="15dp"
             android:gravity="center"
-            android:textSize="14sp"
             android:text="@{item.name.split(`-`)[1]}"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/linearLayout4"
             app:layout_constraintStart_toStartOf="parent" />
 
         <LinearLayout
-            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="2dp"
+            android:id="@+id/linearLayout4"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_marginEnd="15dp"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent">
-        <Button
-            android:onClick="@{click::sub}"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:text="-"
-            android:gravity="center"
-            android:textSize="20sp"/>
-            <EditText
-                android:inputType="number"
-                android:id="@+id/et_num"
-                android:layout_width="70dp"
-                android:layout_height="50dp"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-                android:text="@{``+item.num}"
-                android:gravity="center"/>
-            <Button
-                android:onClick="@{click::add}"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:text="+"
+
+            <LinearLayout
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/btn_sub"
                 android:gravity="center"
-                android:textSize="20sp"/>
+                android:onClick="@{click::sub}"
+                android:padding="5dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_sub" />
+            </LinearLayout>
+
+
+            <EditText
+                android:id="@+id/et_num"
+                android:layout_marginStart="4dp"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:background="@drawable/et_num"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLines="1"
+                android:text="@{``+item.num}"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_marginStart="4dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/btn_sub"
+                android:gravity="center"
+                android:onClick="@{click::add}"
+                android:padding="5dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_add" />
+            </LinearLayout>
         </LinearLayout>
 
+        <TextView
+            android:id="@+id/bottom"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@drawable/bg_line"
+            app:layout_constraintBottom_toBottomOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

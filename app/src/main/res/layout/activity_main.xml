@@ -16,57 +16,90 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:background="@color/bg_null"
         android:layout_width="match_parent"
-        android:fitsSystemWindows="true"
         android:layout_height="match_parent"
+        android:background="#FAF7F2"
         tools:context=".view.activity.MainActivity">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout"
             android:layout_width="match_parent"
+
             android:layout_height="240dp"
             app:layout_constraintTop_toTopOf="parent">
 
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:src="@drawable/bg_main_head"
+                app:layout_constraintDimensionRatio="H,10160:3159"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+
+            <com.example.carbonfootprintcalculator.ui.StatusBarHeightView
+                android:id="@+id/shb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent" />
             <androidx.cardview.widget.CardView
+                app:cardBackgroundColor="#E6FFFFFF"
+                app:cardElevation="0dp"
                 android:id="@+id/cardView"
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
+                android:layout_height="35dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="10dp"
                 app:cardCornerRadius="5dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toBottomOf="@+id/shb">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:gravity="center" />
+                    android:layout_marginHorizontal="10dp"
+                    android:gravity="center"
+                    android:text="@{`用户:`+vm.uname}"
+                    android:textColor="#37BA73"
+                    android:textSize="15sp" />
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:onClick="@{event::menu}"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                app:cardElevation="10dp"
+                app:cardBackgroundColor="#FFFFFF"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_marginEnd="15dp"
                 android:foreground="?attr/selectableItemBackground"
+                android:onClick="@{event::menu}"
                 app:cardCornerRadius="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/cardView">
 
                 <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:layout_margin="7dp"
+                    android:src="@drawable/ic_menu" />
 
             </androidx.cardview.widget.CardView>
-
+            <ImageView
+                android:src="@drawable/logo_haft"
+                android:layout_width="120dp"
+                android:scaleType="centerCrop"
+                android:layout_height="60dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
             <androidx.cardview.widget.CardView
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="#D9FFFFFF"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginHorizontal="40dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="20dp"
-                app:cardCornerRadius="10dp"
+                app:cardCornerRadius="15dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -76,149 +109,182 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
+
                     <TextView
-                        android:layout_marginTop="5dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/black"
+                        android:layout_marginTop="5dp"
                         android:gravity="center"
-                        android:text="碳足迹"
-                        android:textSize="16sp"/>
+                        android:text="碳足迹计算结果"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"
                         android:gravity="center"
                         android:text="@{vm.carbonNum}"
-                        android:textSize="25sp"
-                        android:textColor="@color/black"/>
+                        android:textColor="@color/black"
+                        android:textSize="21sp" />
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <LinearLayout
-            android:id="@+id/linearLayout3"
-            android:layout_width="100dp"
+        <androidx.cardview.widget.CardView
+            app:cardElevation="10dp"
+            android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
 
-            <TextView
-                android:background="@{vm.selectPos==0 ? @drawable/selected : @drawable/unselect}"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:onClick="@{event::select0}"
-                android:layout_height="0dp"
-                android:layout_marginBottom="3dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="办公"
-                android:textColor="@color/black"
-                android:textSize="18sp" />
+                android:layout_height="match_parent">
 
-            <TextView
-                android:onClick="@{event::select1}"
-                android:background="@{vm.selectPos==1 ? @drawable/selected : @drawable/unselect}"
-                android:text="日常生活"
-                android:textSize="18sp"
-                android:textColor="@color/black"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginBottom="3dp"
-                android:layout_weight="1"
-                android:gravity="center" />
+                <LinearLayout
+                    android:paddingStart="5dp"
+                    android:background="@color/selected"
+                    android:id="@+id/linearLayout3"
+                    android:layout_width="105dp"
+                    android:layout_height="0dp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:onClick="@{event::select2}"
-                android:background="@{vm.selectPos==2 ? @drawable/selected : @drawable/unselect}"
-                android:text="电器"
-                android:textSize="18sp"
-                android:textColor="@color/black"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginBottom="3dp"
-                android:layout_weight="1"
-                android:gravity="center" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginBottom="3dp"
+                        android:layout_weight="1"
+                        android:background="@{vm.selectPos==0 ? @drawable/selected : @drawable/unselect}"
+                        android:gravity="center"
+                        android:onClick="@{event::select0}"
+                        android:text="商业办公"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
 
-            <TextView
-                android:onClick="@{event::select3}"
-                android:background="@{vm.selectPos==3 ? @drawable/selected : @drawable/unselect}"
-                android:text="餐饮"
-                android:textSize="18sp"
-                android:textColor="@color/black"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginBottom="3dp"
-                android:layout_weight="1"
-                android:gravity="center" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginBottom="3dp"
+                        android:layout_weight="1"
+                        android:background="@{vm.selectPos==1 ? @drawable/selected : @drawable/unselect}"
+                        android:gravity="center"
+                        android:onClick="@{event::select1}"
+                        android:text="日常起居"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
 
-            <TextView
-                android:onClick="@{event::select4}"
-                android:text="旅游"
-                android:background="@{vm.selectPos==4 ? @drawable/selected : @drawable/unselect}"
-                android:textSize="18sp"
-                android:textColor="@color/black"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginBottom="3dp"
-                android:layout_weight="1"
-                android:gravity="center" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginBottom="3dp"
+                        android:layout_weight="1"
+                        android:background="@{vm.selectPos==2 ? @drawable/selected : @drawable/unselect}"
+                        android:gravity="center"
+                        android:onClick="@{event::select2}"
+                        android:text="电子电器"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
 
-            <TextView
-                android:onClick="@{event::select5}"
-                android:text="交通"
-                android:background="@{vm.selectPos==5 ? @drawable/selected : @drawable/unselect}"
-                android:textSize="18sp"
-                android:textColor="@color/black"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginBottom="3dp"
-                android:layout_weight="1"
-                android:gravity="center" />
-        </LinearLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginBottom="3dp"
+                        android:layout_weight="1"
+                        android:background="@{vm.selectPos==3 ? @drawable/selected : @drawable/unselect}"
+                        android:gravity="center"
+                        android:onClick="@{event::select3}"
+                        android:text="一日三餐"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:background="@color/selected"
-            android:id="@+id/recyclerview"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/linearLayout3"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout2"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            app:layout_constraintBottom_toBottomOf="parent">
+                        android:layout_marginBottom="3dp"
+                        android:layout_weight="1"
+                        android:background="@{vm.selectPos==4 ? @drawable/selected : @drawable/unselect}"
+                        android:gravity="center"
+                        android:onClick="@{event::select4}"
+                        android:text="旅游度假"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
 
-            <Button
-                android:onClick="@{event::clear}"
-                android:text="置零"
-                android:id="@+id/button"
-                android:layout_width="100dp"
-                android:layout_height="50dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/button2"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginBottom="3dp"
+                        android:layout_weight="1"
+                        android:background="@{vm.selectPos==5 ? @drawable/selected : @drawable/unselect}"
+                        android:gravity="center"
+                        android:onClick="@{event::select5}"
+                        android:text="交通工具"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+                </LinearLayout>
 
-            <Button
-                android:onClick="@{event::calculator}"
-                android:text="计算"
-                android:id="@+id/button2"
-                android:layout_width="100dp"
-                android:layout_height="50dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/button"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:background="@color/selected"
+                    android:id="@+id/recyclerview"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/linearLayout3"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:background="@drawable/bg_main_bottom_shape"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/bg_main_bottom" />
+
+                    <Button
+                        android:id="@+id/button"
+                        android:layout_width="100dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/btn_zero"
+                        android:onClick="@{event::clear}"
+                        android:text="置  零"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/button2"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <Button
+                        android:id="@+id/button2"
+                        android:layout_width="100dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/btn_calculator"
+                        android:onClick="@{event::calculator}"
+                        android:text="计  算"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/button"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -56,6 +56,7 @@ public class MainRVItemAdapter extends RecyclerView.Adapter<MainRVItemAdapter.Vi
                 String text=holder.binding.etNum.getText().toString();
                 if(text.equals("")) return;
                 double num= Double.parseDouble(text);
+                num=Math.max(num,0) ;
                 MainRVItem item = mainRVItemList.get(pos);
                 item.num=num;
                 mainRVItemNumChangeListener.onNumChange(item);
@@ -109,7 +110,7 @@ public class MainRVItemAdapter extends RecyclerView.Adapter<MainRVItemAdapter.Vi
             String text=holder.binding.etNum.getText().toString();
             if(text.equals("")) return;
             double num= Double.parseDouble(text);
-            num=num-1;
+            num=Math.max(num-1,0) ;
             MainRVItem item = mainRVItemList.get(pos);
             item.num=num;
             mainRVItemNumChangeListener.onNumChange(item);

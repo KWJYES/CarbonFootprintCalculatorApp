@@ -36,67 +36,67 @@ public class CalculatorUtil {
 
     public static void initCoefficientMap() {
         //commercialOffice
-        coefficientMap.put("commercialOffice-computer", 1.0);
-        coefficientMap.put("commercialOffice-email", 0.04);
-        coefficientMap.put("commercialOffice-printer", 0.08);
-        coefficientMap.put("commercialOffice-searchEngines", 0.003);
+        coefficientMap.put("commercialOffice-电脑(小时)", 1.0);
+        coefficientMap.put("commercialOffice-邮件(封)", 0.04);
+        coefficientMap.put("commercialOffice-打印纸(张)", 0.08);
+        coefficientMap.put("commercialOffice-搜索引擎(次)", 0.003);
         //DailyLiving
-        coefficientMap.put("DailyLiving-coalGas", 0.71);
-        coefficientMap.put("DailyLiving-electric", 1.0);
-        coefficientMap.put("DailyLiving-liveRubbish", 2.06);
-        coefficientMap.put("DailyLiving-naturalGas", 2.91);
-        coefficientMap.put("DailyLiving-oneTimeKu", 0.01);
-        coefficientMap.put("DailyLiving-oneTimePaper", 3.50);
-        coefficientMap.put("DailyLiving-plasticBag", 0.01);
-        coefficientMap.put("DailyLiving-polyesterClothier", 25.7);
-        coefficientMap.put("DailyLiving-pureCottonClothes", 7.0);
-        coefficientMap.put("DailyLiving-shampoo", 0.1);
-        coefficientMap.put("DailyLiving-washingDispensation", 0.3);
-        coefficientMap.put("DailyLiving-washingLiquid", 0.8);
-        coefficientMap.put("DailyLiving-washingMachine", 0.17);
-        coefficientMap.put("DailyLiving-water", 0.91);
-        coefficientMap.put("DailyLiving-waterHeater", 2.4);
+        coefficientMap.put("DailyLiving-煤气(立方米)", 0.71);
+        coefficientMap.put("DailyLiving-用电(度)", 1.0);
+        coefficientMap.put("DailyLiving-生活垃圾(kg)", 2.06);
+        coefficientMap.put("DailyLiving-天然气(立方米)", 2.91);
+        coefficientMap.put("DailyLiving-一次性筷子(双)", 0.01);
+        coefficientMap.put("DailyLiving-一次性用纸(kg)", 3.50);
+        coefficientMap.put("DailyLiving-塑料袋(个)", 0.01);
+        coefficientMap.put("DailyLiving-涤纶衣服(件)", 25.7);
+        coefficientMap.put("DailyLiving-棉质衣服(件)", 7.0);
+        coefficientMap.put("DailyLiving-洗发水(升)", 0.1);
+        coefficientMap.put("DailyLiving-日用洗涤用品(升)", 0.3);
+        coefficientMap.put("DailyLiving-洗衣液(升)", 0.8);
+        coefficientMap.put("DailyLiving-用水(立方米)", 0.91);
         //Electronics
-        coefficientMap.put("Electronics-airConditioner", 0.1);
-        coefficientMap.put("Electronics-bridge", 0.83);
-        coefficientMap.put("Electronics-electromagneticFurnace", 0.8);
-        coefficientMap.put("Electronics-fan", 0.4);
-        coefficientMap.put("Electronics-hairDrier", 0.04);
-        coefficientMap.put("Electronics-oven", 0.36);
-        coefficientMap.put("Electronics-TV", 0.1);
+        coefficientMap.put("Electronics-电热水器(小时)", 2.4);
+        coefficientMap.put("Electronics-空调(小时)", 0.1);
+        coefficientMap.put("Electronics-冰箱(小时)", 0.83);
+        coefficientMap.put("Electronics-电磁炉(小时)", 0.8);
+        coefficientMap.put("Electronics-风扇(小时)", 0.4);
+        coefficientMap.put("Electronics-吹风机(小时)", 0.04);
+        coefficientMap.put("Electronics-烤箱(小时)", 0.36);
+        coefficientMap.put("Electronics-电视(小时)", 0.1);
+        coefficientMap.put("Electronics-洗衣机(小时)", 0.17);
         //MealsADay
-        coefficientMap.put("MealsADay-bear", 0.11);
-        coefficientMap.put("MealsADay-beef", 27.0);
-        coefficientMap.put("MealsADay-Broccoli", 2.0);
-        coefficientMap.put("MealsADay-chicken", 1.8);
-        coefficientMap.put("MealsADay-cigarette", 0.02);
-        coefficientMap.put("MealsADay-coffee", 0.1);
-        coefficientMap.put("MealsADay-cola", 0.05);
-        coefficientMap.put("MealsADay-diningInRestaurants", 0.52);
-        coefficientMap.put("MealsADay-egg", 4.80);
-        coefficientMap.put("MealsADay-juice", 0.11);
-        coefficientMap.put("MealsADay-lentil", 0.90);
-        coefficientMap.put("MealsADay-milk", 0.47);
-        coefficientMap.put("MealsADay-mutton", 39.2);
-        coefficientMap.put("MealsADay-peanut", 2.50);
-        coefficientMap.put("MealsADay-potato", 2.90);
-        coefficientMap.put("MealsADay-rice", 2.7);
-        coefficientMap.put("MealsADay-tea", 0.05);
-        coefficientMap.put("MealsADay-toFu", 2.0);
-        coefficientMap.put("MealsADay-tomato", 2.9);
-        coefficientMap.put("MealsADay-Yogurt", 0.55);
+        coefficientMap.put("MealsADay-啤酒(瓶)", 0.11);
+        coefficientMap.put("MealsADay-牛肉(kg)", 27.0);
+        coefficientMap.put("MealsADay-西兰花(kg)", 2.0);
+        coefficientMap.put("MealsADay-鸡肉(kg)", 1.8);
+        coefficientMap.put("MealsADay-香烟(包)", 0.02);
+        coefficientMap.put("MealsADay-咖啡(杯)", 0.1);
+        coefficientMap.put("MealsADay-可乐(杯)", 0.05);
+        coefficientMap.put("MealsADay-餐厅就餐(次)", 0.52);
+        coefficientMap.put("MealsADay-鸡蛋(kg)", 4.80);
+        coefficientMap.put("MealsADay-果汁(杯)", 0.11);
+        coefficientMap.put("MealsADay-扁豆(kg)", 0.90);
+        coefficientMap.put("MealsADay-牛奶(kg)", 0.47);
+        coefficientMap.put("MealsADay-羊肉(kg)", 39.2);
+        coefficientMap.put("MealsADay-花生(kg)", 2.50);
+        coefficientMap.put("MealsADay-土豆(kg)", 2.90);
+        coefficientMap.put("MealsADay-米饭(kg)", 2.7);
+        coefficientMap.put("MealsADay-茶水(杯)", 0.05);
+        coefficientMap.put("MealsADay-豆腐(kg)", 2.0);
+        coefficientMap.put("MealsADay-西红柿(kg)", 2.9);
+        coefficientMap.put("MealsADay-酸奶(kg)", 0.55);
         //tourism
-        coefficientMap.put("tourism-luxuryHotel", 0.05);
-        coefficientMap.put("tourism-hotel", 0.03);
+        coefficientMap.put("tourism-豪华深渊(天)", 0.05);
+        coefficientMap.put("tourism-酒店(天)", 0.03);
         //transformation
-        coefficientMap.put("transformation-bus", 0.03);
-        coefficientMap.put("transformation-electricVehicle", 0.05);
-        coefficientMap.put("transformation-HeightOilCar", 0.41);
-        coefficientMap.put("transformation-lowOilCar", 0.27);
-        coefficientMap.put("transformation-middleOilCar", 0.3);
-        coefficientMap.put("transformation-plane", 0.28);
-        coefficientMap.put("transformation-train", 0.1);
-        coefficientMap.put("transformation-underWay", 0.1);
+        coefficientMap.put("transformation-公交车(公里)", 0.03);
+        coefficientMap.put("transformation-电动车(公里)", 0.05);
+        coefficientMap.put("transformation-高油耗小汽车(公里)", 0.41);
+        coefficientMap.put("transformation-低油耗小汽车(公里)", 0.27);
+        coefficientMap.put("transformation-中油耗小汽车(公里)", 0.3);
+        coefficientMap.put("transformation-飞机(公里)", 0.28);
+        coefficientMap.put("transformation-火车(公里)", 0.1);
+        coefficientMap.put("transformation-地铁(公里)", 0.1);
     }
 
     public static void initNumMap(){

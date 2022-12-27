@@ -42,7 +42,7 @@
             android:layout_marginBottom="8dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="欢迎注册~"
+            android:text="欢迎加入我们~"
             android:layout_marginStart="5dp"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout"
             app:layout_constraintStart_toStartOf="@+id/linearLayout" />

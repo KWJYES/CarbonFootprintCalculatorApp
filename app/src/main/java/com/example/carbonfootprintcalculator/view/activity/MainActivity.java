@@ -17,6 +17,7 @@ import com.example.carbonfootprintcalculator.callback.MainRVItemNumChangeListene
 import com.example.carbonfootprintcalculator.databinding.ActivityMainBinding;
 import com.example.carbonfootprintcalculator.entity.MainRVItem;
 import com.example.carbonfootprintcalculator.utils.ActivityCollector;
+import com.example.carbonfootprintcalculator.utils.MyApplication;
 import com.example.carbonfootprintcalculator.viewmodel.MainViewModel;
 
 import java.util.ArrayList;
@@ -74,6 +75,7 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void initView() {
         vm.selectPos.setValue(0);
+        vm.uname.setValue(MyApplication.userName);
         vm.carbonNum.setValue("0.0");
     }
 

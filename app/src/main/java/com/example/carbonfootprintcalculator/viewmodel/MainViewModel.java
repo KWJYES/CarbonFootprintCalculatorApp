@@ -16,6 +16,8 @@ public class MainViewModel extends ViewModel {
     public CalculatorUtil calculatorUtil=new CalculatorUtil();
 
     public MutableLiveData<String> requestSate= new MutableLiveData<>();
+    public MutableLiveData<String> uname=new MutableLiveData<>();
+
     public void calculator(){
         String num = calculatorUtil.calculator()+"";
         String[] strings=num.split("\\.");

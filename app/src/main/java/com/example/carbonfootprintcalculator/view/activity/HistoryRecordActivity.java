@@ -20,6 +20,7 @@ import com.example.carbonfootprintcalculator.viewmodel.HistoryRecordViewModel;
 import com.scwang.smart.refresh.layout.api.RefreshLayout;
 import com.scwang.smart.refresh.layout.listener.OnRefreshListener;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class HistoryRecordActivity extends BaseActivity {
@@ -61,9 +62,12 @@ public class HistoryRecordActivity extends BaseActivity {
     }
 
     private void updateRv(List<Item> itemList) {
+        List<Item> rItemList=new ArrayList<>();
+        for (int i= itemList.size()-1;i>=0;i--)
+            rItemList.add(itemList.get(i));
         ItemTouchCallBack touchCallBack = new ItemTouchCallBack();
         binding.rvHistoryItem.setLayoutManager(new LinearLayoutManager(this));
-        HistoryRecordRVItemAdapter adapter = new HistoryRecordRVItemAdapter(itemList);
+        HistoryRecordRVItemAdapter adapter = new HistoryRecordRVItemAdapter(rItemList);
         adapter.setItemCallback(item -> vm.deleteRecord(item));
         touchCallBack.setOnItemTouchListener(adapter);
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(touchCallBack);
