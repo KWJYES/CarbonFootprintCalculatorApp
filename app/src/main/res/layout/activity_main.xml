@@ -164,7 +164,7 @@
                         android:gravity="center"
                         android:onClick="@{event::select0}"
                         android:text="商业办公"
-                        android:textColor="@color/black"
+                        android:textColor="@{vm.selectPos==0 ? 0xFF000000 : 0xFFFFFFFF}"
                         android:textSize="18sp" />
 
                     <TextView
@@ -176,7 +176,7 @@
                         android:gravity="center"
                         android:onClick="@{event::select1}"
                         android:text="日常起居"
-                        android:textColor="@color/black"
+                        android:textColor="@{vm.selectPos==1 ? 0xFF000000 : 0xFFFFFFFF}"
                         android:textSize="18sp" />
 
                     <TextView
@@ -188,7 +188,7 @@
                         android:gravity="center"
                         android:onClick="@{event::select2}"
                         android:text="电子电器"
-                        android:textColor="@color/black"
+                        android:textColor="@{vm.selectPos==2 ? 0xFF000000 : 0xFFFFFFFF}"
                         android:textSize="18sp" />
 
                     <TextView
@@ -200,7 +200,7 @@
                         android:gravity="center"
                         android:onClick="@{event::select3}"
                         android:text="一日三餐"
-                        android:textColor="@color/black"
+                        android:textColor="@{vm.selectPos==3 ? 0xFF000000 : 0xFFFFFFFF}"
                         android:textSize="18sp" />
 
                     <TextView
@@ -213,7 +213,7 @@
                         android:gravity="center"
                         android:onClick="@{event::select4}"
                         android:text="旅游度假"
-                        android:textColor="@color/black"
+                        android:textColor="@{vm.selectPos==4 ? 0xFF000000 : 0xFFFFFFFF}"
                         android:textSize="18sp" />
 
                     <TextView
@@ -225,7 +225,7 @@
                         android:gravity="center"
                         android:onClick="@{event::select5}"
                         android:text="交通工具"
-                        android:textColor="@color/black"
+                        android:textColor="@{vm.selectPos==5 ? 0xFF000000 : 0xFFFFFFFF}"
                         android:textSize="18sp" />
                 </LinearLayout>
 
