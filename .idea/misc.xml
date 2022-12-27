@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidStudioProgects/CarbonFootprintCalculator/app/src/main/res/drawable/bg_login_register.xml" value="0.2692307692307692" />
         <entry key="..\:/AndroidStudioProgects/CarbonFootprintCalculator/app/src/main/res/drawable/et_cursor.xml" value="0.2490740740740741" />
         <entry key="..\:/AndroidStudioProgects/CarbonFootprintCalculator/app/src/main/res/drawable/et_login.xml" value="0.2388888888888889" />
         <entry key="..\:/AndroidStudioProgects/CarbonFootprintCalculator/app/src/main/res/drawable/ic_email_fill.xml" value="0.2490740740740741" />

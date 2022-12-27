@@ -15,11 +15,19 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:fitsSystemWindows="true"
+        android:background="@drawable/bg_login_register"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/bg_null"
+        android:fitsSystemWindows="true"
         tools:context=".view.activity.LoginActivity">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bg_login"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="H,2540:1707" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -55,8 +63,8 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="match_parent"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:src="@drawable/ic_user_name" />
 
             <EditText
@@ -87,8 +95,8 @@
             app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="match_parent"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:src="@drawable/ic_password" />
 
             <EditText
@@ -112,7 +120,8 @@
             android:layout_marginTop="10dp"
             android:background="@drawable/login_btn"
             android:onClick="@{event::login}"
-            android:text="登陆"
+            android:text="登  陆"
+            android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
